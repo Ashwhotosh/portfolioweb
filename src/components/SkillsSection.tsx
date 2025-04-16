@@ -1,0 +1,117 @@
+
+import { Code, Database, Terminal, Cpu, LucideIcon, Braces, Server, Globe } from "lucide-react";
+
+// Define technology categories
+const techCategories = [
+  {
+    title: "Programming Languages",
+    icon: Code,
+    skills: [
+      { name: "C/C++" },
+      { name: "Python" },
+      { name: "JavaScript" },
+      { name: "HTML+CSS" },
+    ]
+  },
+  {
+    title: "Web Technologies",
+    icon: Globe,
+    skills: [
+      { name: "React.js" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "PHP" },
+      { name: "Laravel" },
+    ]
+  },
+  {
+    title: "Developer Tools",
+    icon: Terminal,
+    skills: [
+      { name: "VSCode" },
+      { name: "Git" },
+      { name: "GitHub" },
+      { name: "Firebase" },
+      { name: "GraphQL" },
+    ]
+  },
+  {
+    title: "Databases",
+    icon: Database,
+    skills: [
+      { name: "MySQL" },
+      { name: "MongoDB" },
+    ]
+  },
+  {
+    title: "ML & Data Science",
+    icon: Cpu,
+    skills: [
+      { name: "NumPy" },
+      { name: "Pandas" },
+      { name: "TensorFlow" },
+      { name: "Keras" },
+      { name: "OpenCV" },
+    ]
+  },
+  {
+    title: "Other Skills",
+    icon: Braces,
+    skills: [
+      { name: "Problem Solving" },
+      { name: "Data Structures" },
+      { name: "Algorithms" },
+      { name: "System Design" },
+    ]
+  }
+];
+
+const SkillsSection = () => {
+  return (
+    <section id="skills" className="py-20 relative overflow-hidden">
+      <div className="blur-circle -bottom-20 right-20 opacity-20"></div>
+      
+      <div className="container mx-auto px-4">
+        <div className="flex items-center gap-3 mb-12">
+          <Cpu className="text-primary" size={28} />
+          <h2 className="section-title">Technical Skills</h2>
+        </div>
+        
+        {/* Categories */}
+        {techCategories.map((category, index) => (
+          <div key={index} className="mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                <category.icon size={24} />
+              </div>
+              <h3 className="text-xl font-bold">{category.title}</h3>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {category.skills.map((skill, skillIndex) => (
+                <div
+                  key={skillIndex}
+                  className="rounded-xl p-4 border border-border bg-card/30 hover:shadow-xl transition-all duration-300 hover:shadow-purple-500/10 hover:-translate-y-1 flex flex-col items-center text-center"
+                >
+                  {/* Tech logo placeholder */}
+                  <div className="w-16 h-16 mb-3 bg-secondary/50 rounded-full flex items-center justify-center">
+                    <img
+                      src="/placeholder.svg"
+                      alt={`${skill.name} logo`}
+                      className="w-10 h-10 object-contain"
+                      title={`Replace with ${skill.name} logo`}
+                    />
+                    {/* Add technology logo here - replace placeholder.svg with your logo */}
+                  </div>
+                  <span className="font-medium">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default SkillsSection;

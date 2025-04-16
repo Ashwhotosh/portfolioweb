@@ -1,0 +1,17 @@
+
+/* Custom styles for Ashutosh's portfolio */
+
+.btn-primary {
+  @apply px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 flex items-center justify-center gap-2;
+}
+
+/* Dark purple colors overrides (these will override the theme colors for specific elements) */
+.btn-primary, 
+button.bg-primary {
+  background-color: #5B21B6; /* Dark Purple */
+}
+
+.btn-primary:hover, 
+button.bg-primary:hover {
+  background-color: #4C1D95; /* Even Darker Purple */
+}
