@@ -1,7 +1,20 @@
-
 import { User } from "lucide-react";
+import { useEffect } from "react";
 
 const AboutSection = () => {
+  useEffect(() => {
+    // Load Spline viewer script dynamically
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       <div className="blur-circle -top-20 right-20 opacity-20"></div>
@@ -15,9 +28,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-7 gap-10">
           <div className="md:col-span-3 flex justify-center md:justify-start">
             <div className="relative w-full h-80 md:h-96">
-              {/* Spline 3D viewer */}
               <div className="w-full h-full">
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
                 <spline-viewer url="https://prod.spline.design/ZL1QkjGMSH5FUsGH/scene.splinecode"></spline-viewer>
               </div>
             </div>

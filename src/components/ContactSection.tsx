@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { PhoneCall, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -85,7 +84,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">IIIT Raichur, Karnataka, India</p>
+                  <p className="text-muted-foreground">Nashik, Maharashtra, India</p>
                 </div>
               </div>
             </div>

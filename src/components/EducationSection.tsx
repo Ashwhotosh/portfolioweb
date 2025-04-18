@@ -1,4 +1,3 @@
-
 import { GraduationCap } from "lucide-react";
 
 const educationData = [
@@ -7,18 +6,21 @@ const educationData = [
     institution: "IIIT Raichur",
     duration: "2022-2026",
     description: "Pursuing a Bachelor's degree in Computer Science with focus on algorithms, data structures, and software development.",
+    logo: "/lovable-uploads/52ab38a5-2722-41b0-936b-7d906f20c85d.png"
   },
   {
     degree: "ISC (12th Standard)",
     institution: "Ashoka Junior College, Nashik",
     duration: "2021",
     description: "Completed Indian School Certificate with 85% marks with focus on Science and Mathematics.",
+    logo: "/lovable-uploads/ace713de-a37e-4e93-a059-77e2e6d7345f.png"
   },
   {
     degree: "ICSE (10th Standard)",
     institution: "Ashoka Universal School",
     duration: "2019",
     description: "Achieved 91.8% in Indian Certificate of Secondary Education with distinction in Mathematics and Science.",
+    logo: "/lovable-uploads/ace713de-a37e-4e93-a059-77e2e6d7345f.png"
   },
 ];
 
@@ -64,14 +66,11 @@ const EducationSection = () => {
                   index % 2 === 0 ? "justify-start md:pl-12" : "justify-end md:pr-12"
                 }`}>
                   <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-primary/20 bg-white p-2 shadow-lg flex items-center justify-center">
-                    {/* Institute Logo Placeholder */}
                     <img 
-                      src="/placeholder.svg" 
+                      src={education.logo}
                       alt={`${education.institution} Logo`}
                       className="w-full h-auto object-contain"
-                      title={`Replace with ${education.institution} logo`}
                     />
-                    {/* Add institute logo here - replace placeholder.svg with your logo */}
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
-
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TypewriterText from "@/components/TypewriterText";
 
 const HeroSection = () => {
   return (
@@ -22,9 +22,7 @@ const HeroSection = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 Ashutosh Singh
               </h1>
-              <p className="text-xl md:text-2xl font-medium gradient-text">
-                Computer Science Undergrad | Web Developer | Tech Enthusiast
-              </p>
+              <TypewriterText />
             </div>
 
             <p className="text-muted-foreground text-lg md:text-xl opacity-0 animate-fade-in-delay">
