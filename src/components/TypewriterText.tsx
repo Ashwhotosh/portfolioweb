@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 const phrases = [
   "Computer Science Undergrad",
   "Web Dev",
-  "Tech Enthusiast"
-  "ML Dev"
+  "Tech Enthusiast",
+  "ML Dev",
   " Prompt engineer"
 ];
 
