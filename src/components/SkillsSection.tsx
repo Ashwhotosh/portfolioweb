@@ -5,10 +5,10 @@ const techCategories = [
     title: "Programming Languages",
     icon: Code,
     skills: [
-      { name: "C/C++", logo: "/lovable-uploads/4072fa2b-210e-4e2c-b68f-8f7ea125f2ba.png" },
+      { name: "C/C++", logo: "/lovable-uploads/77d3a851-4df3-4e3e-9a32-deb8673062f5.png" },
       { name: "Python", logo: "/lovable-uploads/7b78d007-a80e-4721-a193-699fcafd0e0a.png" },
-      { name: "JavaScript", logo: "/lovable-uploads/695f141a-bb3f-406a-83e1-1ff950782000.png" },
-      { name: "HTML+CSS", logo: "/lovable-uploads/77d3a851-4df3-4e3e-9a32-deb8673062f5.png" },
+      { name: "JavaScript", logo: "/lovable-uploads/4072fa2b-210e-4e2c-b68f-8f7ea125f2ba.png" },
+      { name: "HTML+CSS", logo: "/lovable-uploads/695f141a-bb3f-406a-83e1-1ff950782000.png" },
     ]
   },
   {

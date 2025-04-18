@@ -18,7 +18,7 @@ const Footer = () => {
               <span className="text-primary">Ashutosh</span> Singh
             </h3>
             <p className="text-muted-foreground mt-1">
-              Computer Science Undergrad | Web Developer | Tech Enthusiast
+              Computer Science Undergrad | Web Developer | Tech Enthusiast | ML Dev 
             </p>
           </div>
           

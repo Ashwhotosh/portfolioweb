@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 
 const phrases = [
   "Computer Science Undergrad",
-  "Web Developer",
+  "Web Dev",
   "Tech Enthusiast"
+  "ML Dev"
+  " Prompt engineer"
 ];
 
 const TypewriterText = () => {
