@@ -1,6 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypewriterText from "@/components/TypewriterText";
+import Waves from "./Waves";
 
 const HeroSection = () => {
   return (
@@ -8,6 +9,21 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen pt-28 pb-20 flex flex-col justify-center overflow-hidden"
     >
+      {/* Wave background */}
+      <Waves
+        lineColor="#9b87f530"
+        backgroundColor="#0000"
+        waveSpeedX={0.02}
+        waveSpeedY={0.01}
+        waveAmpX={40}
+        waveAmpY={20}
+        friction={0.9}
+        tension={0.01}
+        maxCursorMove={120}
+        xGap={12}
+        yGap={36}
+      />
+
       {/* Decorative elements */}
       <div className="blur-circle top-20 left-20 opacity-30"></div>
       <div className="blur-circle bottom-20 right-20 opacity-20"></div>
