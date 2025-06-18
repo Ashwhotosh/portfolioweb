@@ -101,7 +101,7 @@ const ContactSection = () => {
                 <Input
                   id="name"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Ashutosh Singh"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -117,7 +117,7 @@ const ContactSection = () => {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="ashu@example.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
