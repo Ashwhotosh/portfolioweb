@@ -17,7 +17,7 @@ const BusinessHeroSection = () => {
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-cyan-500/30 shadow-2xl">
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/ed641d9a-a061-4a74-a2ee-847ad794ab3b.png" 
                 alt="Ashutosh Singh" 
                 className="w-full h-full object-cover"
               />
