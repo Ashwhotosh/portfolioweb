@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Mail, Download, Moon, Sun } from "lucide-react";
+import { Menu, X, Linkedin, Mail, Download, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
 
@@ -36,28 +36,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md py-3 shadow-sm"
+          ? "bg-background/80 backdrop-blur-md py-3 shadow-sm border-b border-border"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a
-          href="#hero"
-          className="font-bold text-xl md:text-2xl text-foreground flex items-center gap-2"
-        >
-          {/* Logo placeholder */}
-          <div className="h-10 w-10 rounded-md overflow-hidden">
-            {/* Add your logo here */}
-            <img 
-              src="/placeholder.svg" 
-              alt="Logo" 
-              className="h-full w-full object-contain"
-              title="Replace with your logo"
-            />
-          </div>
-        </a>
+        {/* Removed logo section */}
+        <div></div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
@@ -65,7 +52,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("about")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 About
               </button>
@@ -73,7 +60,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("education")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 Education
               </button>
@@ -81,7 +68,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("skills")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 Skills
               </button>
@@ -89,7 +76,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("projects")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 Projects
               </button>
@@ -97,7 +84,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("experience")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 Experience
               </button>
@@ -105,31 +92,31 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("contact")} 
-                className="nav-link"
+                className="relative px-3 py-1.5 text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 Contact
               </button>
             </li>
           </ul>
 
-          {/* Theme toggle button */}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-
           <Button 
-            className="bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
-            onClick={() => window.open("/resume.pdf", "_blank")}
+            className="bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 font-medium"
+            onClick={() => window.open("https://drive.google.com/file/d/1Pb_aj5AjiiX7LIGZF_kI88LRyuXt1lZP/view?usp=sharing", "_blank")}
           >
             <Download className="mr-2 h-4 w-4" /> Resume
           </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="rounded-full"
+          >
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          </Button>
         </div>
 
-        {/* Mobile Navigation Toggle */}
         <button
           className="md:hidden p-2 text-foreground focus:outline-none"
           onClick={toggleMenu}
@@ -140,7 +127,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-background/95 backdrop-blur-lg z-40 md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-background/95 backdrop-blur-lg z-30 md:hidden transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -149,7 +136,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("about")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 About
               </button>
@@ -157,7 +144,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("education")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 Education
               </button>
@@ -165,7 +152,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("skills")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 Skills
               </button>
@@ -173,7 +160,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("projects")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 Projects
               </button>
@@ -181,7 +168,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("experience")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 Experience
               </button>
@@ -189,7 +176,7 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection("contact")} 
-                className="text-xl font-medium"
+                className="text-xl font-medium text-foreground hover:text-primary"
               >
                 Contact
               </button>
@@ -197,42 +184,25 @@ const Navbar = () => {
           </ul>
 
           <div className="flex flex-col gap-4 items-center">
-            {/* Theme toggle button */}
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            
             <Button 
-              className="bg-primary text-white rounded-lg hover:bg-primary/90 w-40"
-              onClick={() => window.open("/resume.pdf", "_blank")}
+              className="bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 w-40"
+              onClick={() => window.open("https://drive.google.com/file/d/1Pb_aj5AjiiX7LIGZF_kI88LRyuXt1lZP/view?usp=sharing", "_blank")}
             >
               <Download className="mr-2 h-4 w-4" /> Resume
             </Button>
             
             <div className="flex gap-4 mt-4">
               <a
-                href="https://github.com/Ashwhotosh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-white transition-colors duration-300"
-              >
-                <Github size={20} />
-              </a>
-              <a
                 href="https://linkedin.com/in/ashwhotosh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-white transition-colors duration-300"
+                className="p-2 rounded-full bg-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="mailto:ashutoshgovindsingh2003@gmail.com"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-white transition-colors duration-300"
+                className="p-2 rounded-full bg-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
               >
                 <Mail size={20} />
               </a>

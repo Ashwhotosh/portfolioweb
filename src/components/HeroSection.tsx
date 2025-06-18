@@ -1,3 +1,4 @@
+
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypewriterText from "@/components/TypewriterText";
@@ -62,7 +63,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 className="btn-outline"
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/1Pb_aj5AjiiX7LIGZF_kI88LRyuXt1lZP/view?usp=sharing", "_blank")}
               >
                 View Resume
               </Button>
