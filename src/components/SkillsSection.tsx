@@ -15,41 +15,41 @@ const techCategories = [
     title: "Web Technologies",
     icon: Globe,
     skills: [
-      { name: "React.js", logo: "/logos/react.png" },
-      { name: "Node.js", logo: "/logos/nodejs.png" },
-      { name: "Express.js", logo: "/logos/express.png" },
-      { name: "PHP", logo: "/logos/php.png" },
-      { name: "Laravel", logo: "/logos/laravel.png" },
+      { name: "React.js", logo: "/lovable-uploads/react.png" },
+      { name: "Node.js", logo: "/lovable-uploads/nodejs.png" },
+      //{ name: "Express.js", logo: "/logos/express.png" },
+      { name: "PHP", logo: "/lovable-uploads/php.png" },
+      //{ name: "Laravel", logo: "/logos/laravel.png" },
     ]
   },
   {
     title: "Developer Tools",
     icon: Terminal,
     skills: [
-      { name: "VSCode" },
-      { name: "Git" },
-      { name: "GitHub" },
-      { name: "Firebase" },
-      { name: "GraphQL" },
+      { name: "VSCode", logo: "/lovable-uploads/vscode.png" },
+      { name: "Git", logo: "/lovable-uploads/git.png" },
+      { name: "GitHub", logo: "/lovable-uploads/github.png" },
+      //{ name: "Firebase" },
+      //{ name: "GraphQL" },
     ]
   },
   {
     title: "Databases",
     icon: Database,
     skills: [
-      { name: "MySQL" },
-      { name: "MongoDB" },
+      { name: "MySQL", logo: "/lovable-uploads/mysql.png" },
+      //{ name: "MongoDB" },
     ]
   },
   {
     title: "ML & Data Science",
     icon: Cpu,
     skills: [
-      { name: "NumPy" },
-      { name: "Pandas" },
-      { name: "TensorFlow" },
-      { name: "Keras" },
-      { name: "OpenCV" },
+      { name: "NumPy", logo: "/lovable-uploads/numpy.png" },
+      { name: "Pandas" , logo: "/lovable-uploads/Pandas.png"},
+      //{ name: "TensorFlow" },
+      //{ name: "Keras" },
+      //{ name: "OpenCV" },
     ]
   },
   {
