@@ -26,7 +26,7 @@ const techCategories = [
     title: "Developer Tools",
     icon: Terminal,
     skills: [
-      { name: "VSCode", logo: "/lovable-uploads/vscode.png" },
+      { name: "VSCode", logo: "/lovable-uploads/vscode.webp" },
       { name: "Git", logo: "/lovable-uploads/git.png" },
       { name: "GitHub", logo: "/lovable-uploads/github.png" },
       //{ name: "Firebase" },
