@@ -79,17 +79,17 @@ const BusinessEducationSection = () => {
                   <p className="text-gray-400">{education.duration}</p>
                   <p className="mt-2 text-gray-300">{education.description}</p>
                   
-                  {/* Achievements */}
+                  {/* Achievements - Fixed alignment */}
                   <div className="mt-4">
                     <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Highlights:</h4>
-                    <ul className="space-y-1">
+                    <div className="space-y-1">
                       {education.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-sm text-gray-300 flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>
-                          {achievement}
-                        </li>
+                        <div key={idx} className="text-sm text-gray-300 flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>{achievement}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
                 
