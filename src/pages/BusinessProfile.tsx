@@ -11,30 +11,33 @@ import BusinessContactSection from "@/components/business/BusinessContactSection
 import BusinessFooter from "@/components/business/BusinessFooter";
 
 const BusinessProfile = () => {
-  const [isTechProfile, setIsTechProfile] = useState(false);
+  const [isBusinessProfile, setIsBusinessProfile] = useState(true);
   const navigate = useNavigate();
 
   const handleToggle = (checked: boolean) => {
     console.log("Business toggle clicked, checked:", checked);
-    setIsTechProfile(checked);
-    if (checked) {
+    setIsBusinessProfile(checked);
+    if (!checked) {
       console.log("Navigating to tech profile");
-      navigate("/");
+      // Add a small delay to show the animation before navigation
+      setTimeout(() => {
+        navigate("/");
+      }, 150);
     }
   };
 
   return (
     <div className="min-h-screen relative bg-black text-white">
-      {/* Toggle Switch */}
-      <div className="fixed top-4 left-4 z-50 flex items-center gap-3 bg-black/90 backdrop-blur-sm px-4 py-3 rounded-lg border border-cyan-500/30 shadow-lg">
-        <span className="text-sm font-medium text-cyan-300">Business</span>
+      {/* Toggle Switch - Fixed positioning and consistent layout */}
+      <div className="fixed top-4 left-4 z-50 flex items-center gap-3 bg-black/90 backdrop-blur-sm px-4 py-3 rounded-lg border border-purple-500/30 shadow-lg">
+        <span className={`text-sm font-medium transition-colors duration-300 ${!isBusinessProfile ? 'text-cyan-400' : 'text-white/60'}`}>Tech</span>
         <Switch
-          checked={isTechProfile}
+          checked={isBusinessProfile}
           onCheckedChange={handleToggle}
           aria-label="Switch between business and tech profile"
-          className="data-[state=checked]:bg-cyan-500"
+          className="data-[state=checked]:bg-purple-500 data-[state=unchecked]:bg-cyan-500 transition-all duration-300"
         />
-        <span className="text-sm font-medium text-cyan-300">Tech</span>
+        <span className={`text-sm font-medium transition-colors duration-300 ${isBusinessProfile ? 'text-purple-400' : 'text-white/60'}`}>Business</span>
       </div>
       
       <BusinessNavbar />
