@@ -1,80 +1,86 @@
-import { GraduationCap } from "lucide-react";
+type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
-const educationData = [
+const education: { period: string; degree: string; institution: string; detail: string; tone: Tone }[] = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "IIIT Raichur",
-    duration: "2022-2026",
-    description: "Pursuing a Bachelor's degree in Computer Science with focus on algorithms, data structures, and software development.",
-    logo: "/lovable-uploads/52ab38a5-2722-41b0-936b-7d906f20c85d.png"
+    period: "2022 — 2026",
+    degree: "B.Tech, Computer Science Engineering",
+    institution: "Indian Institute of Information Technology, Raichur",
+    detail: "Roll: CS22B1013",
+    tone: "amber",
   },
   {
-    degree: "ISC (12th Standard)",
+    period: "2019 — 2021",
+    degree: "ISC (12th)",
     institution: "Ashoka Junior College, Nashik",
-    duration: "2021",
-    description: "Completed Indian School Certificate with 85% marks with focus on Science and Mathematics.",
-    logo: "/lovable-uploads/ace713de-a37e-4e93-a059-77e2e6d7345f.png"
+    detail: "85%",
+    tone: "blue",
   },
   {
-    degree: "ICSE (10th Standard)",
+    period: "Until 2019",
+    degree: "ICSE (10th)",
     institution: "Ashoka Universal School",
-    duration: "2019",
-    description: "Achieved 91.8% in Indian Certificate of Secondary Education with distinction in Mathematics and Science.",
-    logo: "/lovable-uploads/ace713de-a37e-4e93-a059-77e2e6d7345f.png"
+    detail: "91.80%",
+    tone: "sage",
   },
+];
+
+const recognition: { label: string; tone: Tone }[] = [
+  { label: "Top 5% of 1.2M students in JEE", tone: "amber" },
+  { label: "MHT-CET 97.1 percentile (7L+ applicants)", tone: "blue" },
+  { label: "Reliance Scholar", tone: "sage" },
+  { label: "Agile Foundations — IIBA", tone: "clay" },
+  { label: "Breaking into Product Management — GeeksforGeeks", tone: "plum" },
 ];
 
 const EducationSection = () => {
   return (
-    <section id="education" className="py-20 bg-secondary/30 relative overflow-hidden">
-      <div className="blur-circle top-20 left-0 opacity-20"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-12">
-          <GraduationCap className="text-primary" size={28} />
-          <h2 className="section-title">Education</h2>
-        </div>
-        
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:-translate-x-1/2"></div>
-          
-          {/* Education Items */}
-          <div className="space-y-12">
-            {educationData.map((education, index) => (
-              <div 
-                key={index} 
-                className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary transform md:-translate-x-1/2 z-10"></div>
-                
-                {/* Content */}
-                <div className={`ml-12 md:ml-0 ${
-                  index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
-                }`}>
-                  <h3 className="text-xl font-bold">{education.degree}</h3>
-                  <p className="text-primary font-medium">{education.institution}</p>
-                  <p className="text-muted-foreground">{education.duration}</p>
-                  <p className="mt-2">{education.description}</p>
-                </div>
-                
-                {/* Logo */}
-                <div className={`hidden md:flex items-center ${
-                  index % 2 === 0 ? "justify-start md:pl-12" : "justify-end md:pr-12"
-                }`}>
-                  <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-primary/20 bg-white p-2 shadow-lg flex items-center justify-center">
-                    <img 
-                      src={education.logo}
-                      alt={`${education.institution} Logo`}
-                      className="w-full h-auto object-contain"
-                    />
+    <section id="education" className="relative scroll-mt-24 bg-wash-cream py-24 md:py-32">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-3">
+            <div className="flex items-center">
+              <span className="tone-bar tone-bar-plum" />
+              <p className="eyebrow-plum">05 — Education</p>
+            </div>
+            <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
+              Background.
+            </h2>
+          </div>
+
+          <div className="md:col-span-9">
+            <ol className="divide-y divide-border">
+              {education.map((e, i) => (
+                <li key={i} className="grid grid-cols-12 gap-4 py-6 first:pt-0">
+                  <div className="col-span-12 md:col-span-3">
+                    <div className="flex items-center">
+                      <span className={`tone-bar tone-bar-${e.tone}`} />
+                      <p className={`eyebrow-${e.tone}`}>{e.period}</p>
+                    </div>
                   </div>
-                </div>
+                  <div className="col-span-12 md:col-span-9">
+                    <h3 className="text-lg font-medium text-foreground">{e.degree}</h3>
+                    <p className="mt-1 text-[15px] text-muted-foreground">{e.institution}</p>
+                    <p className={`mt-2 font-mono text-[12px] uppercase tracking-[0.14em] text-${e.tone}`}>
+                      {e.detail}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-12 border-t border-border pt-8">
+              <div className="flex items-center">
+                <span className="tone-bar tone-bar-plum" />
+                <p className="eyebrow-plum">Recognition & Certifications</p>
               </div>
-            ))}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {recognition.map((r, i) => (
+                  <span key={i} className={`chip-${r.tone}`}>
+                    {r.label}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

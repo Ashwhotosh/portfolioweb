@@ -1,108 +1,94 @@
-import { Code, Database, Terminal, Cpu, LucideIcon, Braces, Server, Globe } from "lucide-react";
+type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
-const techCategories = [
+interface Group {
+  label: string;
+  tone: Tone;
+  items: string[];
+}
+
+const groups: Group[] = [
   {
-    title: "Programming Languages",
-    icon: Code,
-    skills: [
-      { name: "C/C++", logo: "/lovable-uploads/77d3a851-4df3-4e3e-9a32-deb8673062f5.png" },
-      { name: "Python", logo: "/lovable-uploads/7b78d007-a80e-4721-a193-699fcafd0e0a.png" },
-      { name: "JavaScript", logo: "/lovable-uploads/4072fa2b-210e-4e2c-b68f-8f7ea125f2ba.png" },
-      { name: "HTML+CSS", logo: "/lovable-uploads/695f141a-bb3f-406a-83e1-1ff950782000.png" },
-    ]
+    label: "Product",
+    tone: "blue",
+    items: [
+      "PRDs & feature specs",
+      "User stories",
+      "User research",
+      "Roadmap & prioritization",
+      "Trade-off analysis",
+      "Agile / Scrum",
+      "Business analysis",
+      "UAT & launch support",
+    ],
   },
   {
-    title: "Web Technologies",
-    icon: Globe,
-    skills: [
-      { name: "React.js", logo: "/lovable-uploads/react.png" },
-      { name: "Node.js", logo: "/lovable-uploads/nodejs.png" },
-      //{ name: "Express.js", logo: "/logos/express.png" },
-      { name: "PHP", logo: "/lovable-uploads/php.png" },
-      //{ name: "Laravel", logo: "/logos/laravel.png" },
-    ]
+    label: "AI / ML",
+    tone: "sage",
+    items: [
+      "LangChain",
+      "LangGraph",
+      "RAG pipelines",
+      "Multi-agent systems",
+      "LLM orchestration",
+      "DistilBERT",
+      "HuggingFace",
+      "Prompt-driven workflows",
+    ],
   },
   {
-    title: "Developer Tools",
-    icon: Terminal,
-    skills: [
-      { name: "VSCode", logo: "/lovable-uploads/vscode.webp" },
-      { name: "Git", logo: "/lovable-uploads/git.png" },
-      { name: "GitHub", logo: "/lovable-uploads/github.png" },
-      //{ name: "Firebase" },
-      //{ name: "GraphQL" },
-    ]
+    label: "Engineering",
+    tone: "amber",
+    items: ["Python", "Pandas", "NumPy", "SQL", "C", "C++", "Scikit-learn", "TensorFlow"],
   },
   {
-    title: "Databases",
-    icon: Database,
-    skills: [
-      { name: "MySQL", logo: "/lovable-uploads/mysql.png" },
-      //{ name: "MongoDB" },
-    ]
+    label: "Tools",
+    tone: "clay",
+    items: ["Notion", "Jira", "Git", "GitHub", "Streamlit", "ChromaDB", "Groq", "Figma"],
   },
-  {
-    title: "ML & Data Science",
-    icon: Cpu,
-    skills: [
-      { name: "NumPy", logo: "/lovable-uploads/numpy.png" },
-      { name: "Pandas" , logo: "/lovable-uploads/Pandas.png"},
-      //{ name: "TensorFlow" },
-      //{ name: "Keras" },
-      //{ name: "OpenCV" },
-    ]
-  },
-  {
-    title: "Other Skills",
-    icon: Braces,
-    skills: [
-      { name: "Problem Solving" },
-      { name: "Data Structures" },
-      { name: "Algorithms" },
-      { name: "System Design" },
-    ]
-  }
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
-      <div className="blur-circle -bottom-20 right-20 opacity-20"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-12">
-          <Cpu className="text-primary" size={28} />
-          <h2 className="section-title">Technical Skills</h2>
-        </div>
-        
-        {techCategories.map((category, index) => (
-          <div key={index} className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <category.icon size={24} />
-              </div>
-              <h3 className="text-xl font-bold">{category.title}</h3>
+    <section id="stack" className="relative scroll-mt-24 py-24 md:py-32">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-3">
+            <div className="flex items-center">
+              <span className="tone-bar tone-bar-sage" />
+              <p className="eyebrow-sage">04 — Stack</p>
             </div>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {category.skills.map((skill, skillIndex) => (
+            <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
+              How I build.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Product craft on top of an applied-AI engineering foundation.
+            </p>
+          </div>
+
+          <div className="md:col-span-9">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {groups.map((g) => (
                 <div
-                  key={skillIndex}
-                  className="rounded-xl p-4 border border-border bg-card/30 hover:shadow-xl transition-all duration-300 hover:shadow-purple-500/10 hover:-translate-y-1 flex flex-col items-center text-center"
+                  key={g.label}
+                  className="rounded-xl border border-border bg-card/60 p-6"
+                  style={{ boxShadow: `inset 3px 0 0 hsl(var(--tone-${g.tone}))` }}
                 >
-                  <div className="w-16 h-16 mb-3 bg-secondary/50 rounded-full flex items-center justify-center">
-                    <img
-                      src={skill.logo || "/placeholder.svg"}
-                      alt={`${skill.name} logo`}
-                      className="w-10 h-10 object-contain"
-                    />
+                  <div className="flex items-center">
+                    <span className={`tone-bar tone-bar-${g.tone}`} />
+                    <p className={`eyebrow-${g.tone}`}>{g.label}</p>
                   </div>
-                  <span className="font-medium">{skill.name}</span>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {g.items.map((it, i) => (
+                      <span key={i} className={`chip-${g.tone}`}>
+                        {it}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

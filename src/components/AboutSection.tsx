@@ -1,51 +1,57 @@
-import { User } from "lucide-react";
-import { useEffect } from "react";
-
 const AboutSection = () => {
-  useEffect(() => {
-    // Load Spline viewer script dynamically
-    const script = document.createElement("script");
-    script.type = "module";
-    script.src = "https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="blur-circle -top-20 right-20 opacity-20"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-8">
-          <User className="text-primary" size={28} />
-          <h2 className="section-title">About Me</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-10">
-          <div className="md:col-span-3 flex justify-center md:justify-start">
-            <div className="relative w-full h-80 md:h-96">
-              <div className="w-full h-full">
-                <spline-viewer url="https://prod.spline.design/ZL1QkjGMSH5FUsGH/scene.splinecode"></spline-viewer>
-              </div>
+    <section id="about" className="relative scroll-mt-24 bg-wash-cream py-24 md:py-32">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-3">
+            <div className="flex items-center">
+              <span className="tone-bar tone-bar-amber" />
+              <p className="eyebrow-amber">01 — Now</p>
             </div>
+            <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
+              What I'm doing now.
+            </h2>
           </div>
-          
-          <div className="md:col-span-4 space-y-6">
-            <div className="glass p-6 space-y-4">
-              <h3 className="text-2xl font-bold">I'm Ashutosh Singh</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                As a Computer Science undergraduate at IIIT Raichur, I am passionate about exploring cutting-edge technologies and building innovative solutions. My academic journey is complemented by hands-on experience in web development and machine learning.
+
+          <div className="md:col-span-9 md:pt-2">
+            <div className="space-y-5 text-[17px] leading-[1.75] text-foreground/90">
+              <p>
+                I'm a CS undergrad at <span className="text-foreground font-medium">IIIT Raichur</span>{" "}
+                building{" "}
+                <a
+                  href="https://thetrackpay.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber font-medium link-underline"
+                >
+                  TrackPay
+                </a>{" "}— an agentic AI
+                personal finance platform pre-incubated at IIT Madras. My day-to-day is the
+                product-builder loop: user interviews, PRDs, MVP iteration, and shipping
+                LLM-powered features that actually work in front of users.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I have achieved notable success in competitive exams like JEE and CET, and have participated in challenges like the Amazon ML Challenge, where I honed my skills in practical problem-solving.
+              <p>
+                I most recently finished a Product Manager internship at{" "}
+                <span className="text-blue font-medium">Darwix AI</span>, where I scaled an
+                agentic hiring-call product to <span className="text-foreground font-medium">5,000+ automated calls</span>{" "}
+                and <span className="text-foreground font-medium">300+ qualified leads</span>, and led
+                the Omnichannel Sales Hiring MVP from product logic and workflow design
+                through edge-case handling.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                My passion lies at the intersection of development and machine learning, where I enjoy creating applications that leverage data to solve real-world problems. I am continuously enhancing my skills by working on diverse projects that challenge me to learn and grow.
+              <p>
+                Before product, I lived inside the AI/ML stack — multi-agent systems with{" "}
+                <span className="text-sage font-medium">LangChain</span> and{" "}
+                <span className="text-sage font-medium">LangGraph</span>, RAG pipelines on
+                financial documents, and a DistilBERT-based IPO sentiment model. That
+                technical foundation is why I end up building the things I scope, instead of
+                handing them off.
               </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 md:grid-cols-3">
+              <Metric tone="amber" label="Pre-incubation grant" value="₹5.5L" sub="IIT Madras" />
+              <Metric tone="blue" label="Calls scaled at Darwix" value="5,000+" sub="agentic hiring" />
+              <Metric tone="sage" label="RAG retrieval accuracy" value="84%+" sub="500+ page docs" />
             </div>
           </div>
         </div>
@@ -53,5 +59,29 @@ const AboutSection = () => {
     </section>
   );
 };
+
+const Metric = ({
+  tone,
+  label,
+  value,
+  sub,
+}: {
+  tone: "amber" | "blue" | "sage" | "clay" | "plum";
+  label: string;
+  value: string;
+  sub: string;
+}) => (
+  <div className="relative pl-4">
+    <span
+      className="absolute left-0 top-1 h-10 w-[3px] rounded-full"
+      style={{ background: `hsl(var(--tone-${tone}))` }}
+    />
+    <p className={`eyebrow-${tone}`}>{label}</p>
+    <p className="mt-2 font-serif text-3xl text-foreground md:text-4xl">{value}</p>
+    <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+      {sub}
+    </p>
+  </div>
+);
 
 export default AboutSection;

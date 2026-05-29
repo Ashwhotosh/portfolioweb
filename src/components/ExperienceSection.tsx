@@ -1,86 +1,155 @@
+import { ArrowUpRight } from "lucide-react";
 
-import { Briefcase, Calendar } from "lucide-react";
+type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
-interface Experience {
-  title: string;
-  company: string;
-  duration: string;
-  description: string;
+interface Role {
+  period: string;
+  role: string;
+  org: string;
+  orgUrl?: string;
+  summary: string;
+  bullets: string[];
+  tags?: string[];
+  tone: Tone;
 }
 
-const experienceData: Experience[] = [
+const roles: Role[] = [
   {
-    title: "Internship",
-    company: "E-Cell IIT Bombay",
-    duration: "2023–2024",
-    description: "Collaborated with the entrepreneurship cell team to develop and maintain their website. Implemented new features and improved user experience."
+    period: "Apr 2025 — Present",
+    role: "Founder",
+    org: "TrackPay",
+    orgUrl: "https://thetrackpay.com/",
+    summary:
+      "AI-powered personal finance platform, pre-incubated at IIT Madras with a ₹5.5L grant.",
+    bullets: [
+      "Defined product vision and roadmap for an agentic AI financial assistant.",
+      "Led end-to-end product development — user research, problem validation, feature prioritization, iterative MVP builds.",
+      "Owned PRDs, success metrics, and engineering hand-off across the build.",
+    ],
+    tags: ["Product Strategy", "Agentic AI", "Fintech", "MVP"],
+    tone: "amber",
   },
   {
-    title: "General Secretary",
-    company: "IIIT Raichur",
-    duration: "2024–2025",
-    description: "Represented the student body, organized events and coordinated between students and administration to enhance campus experience."
+    period: "Mar 2026 — May 2026",
+    role: "Product Manager Intern",
+    org: "Darwix AI",
+    summary:
+      "Shipped two AI-first hiring products and produced fundraising-grade product collateral.",
+    bullets: [
+      "Scaled the Agentic AI Hiring Call product to 5,000+ automated calls and 300+ qualified leads.",
+      "Led end-to-end MVP of the Omnichannel Sales Hiring platform — product logic, workflow design, edge cases. 1,000+ calls, 100+ high-quality leads.",
+      "Built investor pitch decks, pipeline reports, and strategic documentation supporting fundraising and BD.",
+    ],
+    tags: ["Product Management", "Voice AI", "Workflow Design", "GTM"],
+    tone: "blue",
   },
   {
-    title: "PR Head",
-    company: "TnP Cell",
-    duration: "2025-2026",
-    description: "Led the public relations team for the Training and Placement Cell, establishing connections with companies and organizing placement activities."
+    period: "Oct 2024 — Oct 2025",
+    role: "General Secretary, COSA",
+    org: "IIIT Raichur",
+    summary:
+      "Operations and leadership across the institute's student affairs cabinet.",
+    bullets: [
+      "Spearheaded planning and execution of 20+ institute-level events (avg footfall 400+).",
+      "Oversaw a cumulative operational budget of ₹4M+ — allocation, vendor negotiation, financial accountability.",
+      "Coordinated end-to-end logistics and cross-team execution across student bodies.",
+    ],
+    tags: ["Operations", "Stakeholder Mgmt", "Budgeting"],
+    tone: "sage",
   },
   {
-    title: "Coordinator",
-    company: "E-Cell",
-    duration: "2022-2024",
-    description: "Organized entrepreneurship events, workshops and competitions to foster innovation and startup culture on campus."
+    period: "Nov 2023 — Oct 2024",
+    role: "Public Relations Secretary",
+    org: "IIIT Raichur",
+    summary:
+      "Owned branding, outreach, and external partnerships for the institute.",
+    bullets: [
+      "Directed branding, outreach, and media strategy for 30+ major events.",
+      "Managed communications, partnerships, and stakeholder engagement.",
+      "Built external networks with colleges, organizations, and media channels to expand institutional reach.",
+    ],
+    tags: ["Brand", "Partnerships", "Comms"],
+    tone: "clay",
   },
-  {
-    title: "Head of PR",
-    company: "IIIT Raichur",
-    duration: "2023-2024",
-    description: "Managed the public relations for the institute, handled social media accounts and coordinated promotional campaigns."
-  },
-  {
-    title: "Event Head",
-    company: "GameXcellence",
-    duration: "2023",
-    description: "Led the organization of a gaming event, managing teams, logistics and ensuring smooth execution of the competition."
-  }
 ];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      <div className="blur-circle bottom-20 left-20 opacity-20"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-12">
-          <Briefcase className="text-primary" size={28} />
-          <h2 className="section-title">Experience</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {experienceData.map((exp, index) => (
-            <div 
-              key={index} 
-              className="p-6 rounded-xl border border-border bg-card/30 hover:shadow-xl transition-all duration-300 hover:shadow-purple-500/10 hover:-translate-y-1"
-            >
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary h-12 w-12 flex items-center justify-center shrink-0">
-                  <Briefcase size={20} />
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <p className="text-primary font-medium">{exp.company}</p>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1 mb-3">
-                    <Calendar size={14} />
-                    <span>{exp.duration}</span>
-                  </div>
-                  <p className="text-muted-foreground">{exp.description}</p>
-                </div>
-              </div>
+    <section id="work" className="relative scroll-mt-24 py-24 md:py-32">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-3">
+            <div className="flex items-center">
+              <span className="tone-bar tone-bar-blue" />
+              <p className="eyebrow-blue">02 — Work</p>
             </div>
-          ))}
+            <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
+              Where I've shipped.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Four roles across product, AI, and operations.
+            </p>
+          </div>
+
+          <div className="md:col-span-9">
+            <ol className="divide-y divide-border">
+              {roles.map((r, i) => (
+                <li key={i} className="group grid grid-cols-12 gap-4 py-8 first:pt-0">
+                  <div className="col-span-12 md:col-span-3">
+                    <div className="flex items-center">
+                      <span className={`tone-bar tone-bar-${r.tone}`} />
+                      <p className={`eyebrow-${r.tone}`}>{r.period}</p>
+                    </div>
+                  </div>
+
+                  <div className="col-span-12 md:col-span-9">
+                    <h3 className="flex flex-wrap items-baseline gap-x-2 text-xl text-foreground">
+                      <span className="font-medium">{r.role}</span>
+                      <span className="text-muted-foreground">·</span>
+                      {r.orgUrl ? (
+                        <a
+                          href={r.orgUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`link-underline inline-flex items-center gap-1 text-${r.tone}`}
+                        >
+                          {r.org}
+                          <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        <span className={`text-${r.tone}`}>{r.org}</span>
+                      )}
+                    </h3>
+
+                    <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+                      {r.summary}
+                    </p>
+
+                    <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-foreground/85">
+                      {r.bullets.map((b, j) => (
+                        <li key={j} className="flex gap-3">
+                          <span
+                            aria-hidden
+                            className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+                            style={{ background: `hsl(var(--tone-${r.tone}))` }}
+                          />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {r.tags && (
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {r.tags.map((t, k) => (
+                          <span key={k} className={`chip-${r.tone}`}>{t}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>

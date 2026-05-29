@@ -1,130 +1,230 @@
+import { ArrowUpRight, Github } from "lucide-react";
 
-import { Code, ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
+type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
 interface Project {
+  index: string;
   title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  github?: string;
-  demo?: string;
+  tagline: string;
+  problem: string;
+  approach: string;
+  outcomes: { value: string; label: string }[];
+  tech: string[];
+  links?: { label: string; href: string; icon?: "github" | "external" }[];
+  status?: { label: string; tone: Tone };
+  tone: Tone;
 }
 
-const projectsData: Project[] = [
+const projects: Project[] = [
   {
-    title: "Pothole Detection",
-    description: "ML + OpenCV-based web app integrated with vehicle hardware for real-time pothole detection.",
-    image: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?q=80&w=1470&auto=format&fit=crop",
-    technologies: ["Python", "OpenCV", "TensorFlow", "React.js"],
-    github: "https://github.com/Ashwhotosh/pothole-detection",
+    index: "01",
+    title: "Multi-Agent IPO Due Diligence System",
+    tagline: "Agentic GenAI framework that produces a full IPO analysis in ~80 seconds.",
+    problem:
+      "RHP documents run 500+ pages. Manual due diligence — combining document understanding, sentiment, and peer-valuation benchmarks — takes analysts days.",
+    approach:
+      "Built a multi-agent pipeline: RAG over RHPs (LangChain + ChromaDB + sentence-transformer embeddings), autonomous agents for data scraping, sentiment scoring, and competitor ticker mapping, with Llama-3.3-70B orchestrated via Groq for fast generation.",
+    outcomes: [
+      { value: "84%+", label: "retrieval accuracy" },
+      { value: "92%", label: "automation accuracy" },
+      { value: "~80s", label: "end-to-end report" },
+    ],
+    tech: ["Python", "LangChain", "RAG", "ChromaDB", "Llama 3.3 70B", "Groq", "Streamlit"],
+    links: [{ label: "GitHub", href: "https://github.com/Ashwhotosh", icon: "github" }],
+    status: { label: "Shipped", tone: "sage" },
+    tone: "sage",
   },
   {
-    title: "LifeGuard",
-    description: "Web app with real-time attendance tracking for security guards with location verification.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1470&auto=format&fit=crop",
-    technologies: ["React.js", "Node.js", "Firebase", "MongoDB"],
-    github: "https://github.com/Ashwhotosh/lifeguard",
-    demo: "https://lifeguard-demo.vercel.app",
+    index: "02",
+    title: "IPO Sentiment Analyzer",
+    tagline: "DistilBERT + logistic regression beats a BiLSTM baseline by 21 points.",
+    problem:
+      "Pre-IPO sentiment in news and filings is noisy, long-form, and badly labeled — generic sentiment models miss financial nuance.",
+    approach:
+      "Compared a BiLSTM deep learning model against a DistilBERT-embedding + logistic-regression pipeline. Built an end-to-end preprocessing and inference workflow on HuggingFace Transformers and Scikit-learn.",
+    outcomes: [
+      { value: "90.4%", label: "accuracy" },
+      { value: "+21%", label: "vs LSTM baseline" },
+      { value: "3-class", label: "pos / neu / neg" },
+    ],
+    tech: ["Python", "DistilBERT", "Scikit-learn", "HuggingFace", "TensorFlow", "NLP"],
+    links: [{ label: "GitHub", href: "https://github.com/Ashwhotosh", icon: "github" }],
+    status: { label: "Shipped", tone: "sage" },
+    tone: "blue",
   },
   {
-    title: "CGPA Calculator Extension",
-    description: "Simple GPA calculator browser extension using JavaScript for quick grade calculations.",
-    image: "https://images.unsplash.com/photo-1564865878688-9a244444042a?q=80&w=1470&auto=format&fit=crop",
-    technologies: ["JavaScript", "HTML", "CSS"],
-    github: "https://github.com/Ashwhotosh/cgpa-calculator",
-    demo: "https://chrome.google.com/webstore/detail/cgpa-calculator/",
+    index: "03",
+    title: "TrackPay",
+    tagline: "Agentic AI personal finance platform. Pre-incubated at IIT Madras.",
+    problem:
+      "Most personal finance apps stop at categorization. People want a memory layer and an assistant that actually reasons about their money over time.",
+    approach:
+      "Defining the product around an Agentic AI Financial Assistant with a money-memory layer and multi-agent advisory loop. Owning vision, PRDs, MVP roadmap, and feature prioritization end-to-end.",
+    outcomes: [
+      { value: "₹5.5L", label: "IIT Madras grant" },
+      { value: "Pre-Inc.", label: "stage" },
+      { value: "MVP", label: "in build" },
+    ],
+    tech: ["Agentic AI", "LangChain", "LLMs", "Product Strategy"],
+    links: [
+      { label: "thetrackpay.com", href: "https://thetrackpay.com/", icon: "external" },
+    ],
+    status: { label: "Live · MVP in build", tone: "amber" },
+    tone: "amber",
   },
   {
-    title: "Minix Task Manager",
-    description: "OS-level system enhancement for Minix providing improved task management capabilities.",
-    image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1474&auto=format&fit=crop",
-    technologies: ["C", "OS Development", "System Programming"],
-    github: "https://github.com/Ashwhotosh/minix-task-manager",
-  }
+    index: "04",
+    title: "Automated Sales Hiring — Darwix AI",
+    tagline: "Multi-channel hiring automation across email, WhatsApp, and AI voice.",
+    problem:
+      "Manual high-volume sales hiring was bottlenecked on recruiter throughput and inconsistent candidate scoring.",
+    approach:
+      "Designed end-to-end product workflows, PRDs, scoring logic, and a multi-channel automation pipeline across email, WhatsApp, and AI voice calls. Removed recruiter dependency from the top of funnel.",
+    outcomes: [
+      { value: "5,000+", label: "automated calls" },
+      { value: "300+", label: "qualified leads" },
+      { value: "Multi-ch.", label: "email · WA · voice" },
+    ],
+    tech: ["PRDs", "Workflow Design", "Voice AI", "Scoring Logic"],
+    status: { label: "Shipped", tone: "sage" },
+    tone: "clay",
+  },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 bg-secondary/30 relative overflow-hidden">
-      <div className="blur-circle -top-20 left-20 opacity-20"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-3 mb-12">
-          <Code className="text-primary" size={28} />
-          <h2 className="section-title">Projects</h2>
+    <section id="projects" className="relative scroll-mt-24 bg-wash-sand py-24 md:py-32">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-3">
+            <div className="flex items-center">
+              <span className="tone-bar tone-bar-clay" />
+              <p className="eyebrow-clay">03 — Projects</p>
+            </div>
+          </div>
+          <div className="md:col-span-9">
+            <h2 className="display text-4xl text-foreground md:text-5xl">
+              Selected work.
+            </h2>
+            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+              Four projects at the intersection of product and applied AI — each one shipped,
+              measured, and tied to a real outcome.
+            </p>
+          </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projectsData.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-card group"
+
+        <div className="space-y-16">
+          {projects.map((p) => (
+            <article
+              key={p.index}
+              className="group relative grid grid-cols-1 gap-8 rounded-xl border border-border bg-background/60 p-6 backdrop-blur-sm md:grid-cols-12 md:gap-10 md:p-10"
+              style={{ boxShadow: `inset 4px 0 0 hsl(var(--tone-${p.tone}))` }}
             >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white text-xl font-bold">{project.title}</h3>
+              <div className="md:col-span-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className={`font-mono text-[11px] uppercase tracking-[0.18em] text-${p.tone}`}>
+                    {p.index}
+                  </span>
+                  {p.status && (
+                    <span className={`chip-${p.status.tone}`}>{p.status.label}</span>
+                  )}
                 </div>
+                <p className="mt-3 font-serif text-2xl italic text-muted-foreground">
+                  {p.tagline}
+                </p>
               </div>
-              
-              <div className="p-5 flex flex-col h-full">
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className="px-2 py-1 bg-primary/10 text-primary-foreground text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
+
+              <div className="md:col-span-9">
+                <h3 className="font-serif text-3xl text-foreground md:text-4xl">
+                  {p.title}
+                </h3>
+
+                <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <p className={`eyebrow-${p.tone}`}>Problem</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-foreground/85">
+                      {p.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <p className={`eyebrow-${p.tone}`}>Approach</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-foreground/85">
+                      {p.approach}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6">
+                  {p.outcomes.map((o, i) => (
+                    <div key={i}>
+                      <p
+                        className="font-serif text-2xl md:text-3xl"
+                        style={{ color: `hsl(var(--tone-${p.tone}))` }}
+                      >
+                        {o.value}
+                      </p>
+                      <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                        {o.label}
+                      </p>
+                    </div>
                   ))}
                 </div>
-                
-                <div className="mt-auto flex gap-3">
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors"
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                  )}
-                  
-                  {project.demo && (
-                    <a 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                  )}
+
+                <div className="mt-6 flex flex-wrap items-center gap-2">
+                  {p.tech.map((t, i) => (
+                    <span key={i} className={`chip-${p.tone}`}>{t}</span>
+                  ))}
                 </div>
+
+                {p.links && p.links.length > 0 && (
+                  <div className="mt-6 flex flex-wrap items-center gap-4">
+                    {p.links.map((l, i) => (
+                      <a
+                        key={i}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-underline inline-flex items-center gap-1.5 text-sm font-medium"
+                      >
+                        {l.icon === "github" ? (
+                          <Github className="h-4 w-4" />
+                        ) : (
+                          <ArrowUpRight className="h-4 w-4" />
+                        )}
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
-        
-        <div className="mt-12 text-center">
-          <Button 
-            className="btn-primary"
-            onClick={() => window.open("https://github.com/Ashwhotosh", "_blank")}
-          >
-            <Github className="mr-2 h-4 w-4" /> 
-            View More Projects on GitHub
-          </Button>
+
+        <div className="mt-16 flex flex-col items-start gap-4 border-t border-border pt-10 md:flex-row md:items-center md:justify-between">
+          <p className="max-w-md text-[15px] leading-relaxed text-muted-foreground">
+            More experiments, case studies, and product decompositions live on GitHub and Medium.
+          </p>
+          <div className="flex gap-3">
+            <a
+              href="https://github.com/Ashwhotosh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+            <a
+              href="https://medium.com/@ashwhotosh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              <ArrowUpRight className="h-4 w-4" />
+              Medium
+            </a>
+          </div>
         </div>
       </div>
     </section>
