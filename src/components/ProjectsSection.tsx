@@ -68,6 +68,7 @@ const projects: Project[] = [
     tech: ["Agentic AI", "LangChain", "LLMs", "Product Strategy"],
     links: [
       { label: "thetrackpay.com", href: "https://thetrackpay.com/", icon: "external" },
+      { label: "Vibecoded App", href: "https://payexpense.vercel.app/", icon: "external" },
     ],
     status: { label: "Live · MVP in build", tone: "amber" },
     tone: "amber",
