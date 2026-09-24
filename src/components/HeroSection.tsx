@@ -43,7 +43,7 @@ const HeroSection = () => {
                 TrackPay
               </a> — pre-incubated at{" "}
               <span className="text-foreground">IIT Madras</span> with a{" "}
-              <span className="text-clay font-medium">₹5.5L grant</span>.
+              <span className="text-clay font-medium">₹10.5L grant</span>.
               Previously Product Manager at{" "}
               <span className="text-foreground">Darwix AI</span>.
               I ship agentic AI products end-to-end, from PRD to MVP.
@@ -112,9 +112,9 @@ const HeroSection = () => {
                 aria-hidden
               />
               <img
-                src="/lovable-uploads/ed641d9a-a061-4a74-a2ee-847ad794ab3b.png"
+                src="/lovable-uploads/ChatGPT Image Aug 13, 2026, 06_58_09 PM.png"
                 alt="Ashutosh Singh"
-                className="h-64 w-52 rounded-md object-cover grayscale transition-all duration-500 hover:grayscale-0 md:h-72 md:w-60"
+                className="h-64 w-52 rounded-md object-cover object-center grayscale transition-all duration-500 hover:grayscale-0 md:h-72 md:w-60"
               />
               <div className="mt-3 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                 <span className="text-sage">Nashik, IN</span>

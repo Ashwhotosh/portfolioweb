@@ -10,6 +10,7 @@ interface Role {
   summary: string;
   bullets: string[];
   tags?: string[];
+  links?: { label: string; href: string }[];
   tone: Tone;
 }
 
@@ -20,13 +21,17 @@ const roles: Role[] = [
     org: "TrackPay",
     orgUrl: "https://thetrackpay.com/",
     summary:
-      "AI-powered personal finance platform, pre-incubated at IIT Madras with a ₹5.5L grant.",
+      "AI-powered personal finance platform, pre-incubated at IIT Madras with a ₹10.5L grant.",
     bullets: [
       "Defined product vision and roadmap for an agentic AI financial assistant.",
       "Led end-to-end product development — user research, problem validation, feature prioritization, iterative MVP builds.",
       "Owned PRDs, success metrics, and engineering hand-off across the build.",
     ],
     tags: ["Product Strategy", "Agentic AI", "Fintech", "MVP"],
+    links: [
+      { label: "Prototype", href: "https://payexpense.vercel.app/" },
+      { label: "Prototype Launch video", href: "https://youtu.be/xsLY5tpoz8Q?si=qiH5I3rn_I33SM05" }
+    ],
     tone: "amber",
   },
   {
@@ -41,6 +46,9 @@ const roles: Role[] = [
       "Built investor pitch decks, pipeline reports, and strategic documentation supporting fundraising and BD.",
     ],
     tags: ["Product Management", "Voice AI", "Workflow Design", "GTM"],
+    links: [
+      { label: "System Design (Notion)", href: "https://valiant-mail-d18.notion.site/Darwix-AI-72c8b4a1f140823d8d4e81ef60cb6d6c?source=copy_link" }
+    ],
     tone: "blue",
   },
   {
@@ -142,6 +150,23 @@ const ExperienceSection = () => {
                       <div className="mt-5 flex flex-wrap gap-2">
                         {r.tags.map((t, k) => (
                           <span key={k} className={`chip-${r.tone}`}>{t}</span>
+                        ))}
+                      </div>
+                    )}
+
+                    {r.links && (
+                      <div className="mt-4 flex flex-wrap gap-4">
+                        {r.links.map((link, k) => (
+                          <a
+                            key={k}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex items-center gap-1.5 text-[15px] font-medium text-${r.tone} hover:underline`}
+                          >
+                            {link.label}
+                            <ArrowUpRight className="h-3.5 w-3.5" />
+                          </a>
                         ))}
                       </div>
                     )}
