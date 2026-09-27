@@ -10,7 +10,7 @@ const HeroSection = () => {
       id="hero"
       className="relative pt-32 pb-24 md:pt-40 md:pb-32"
     >
-      {/* Soft tonal shapes behind the hero — quiet, not gradient soup */}
+      {/* Soft tonal shapes behind the hero - quiet, not gradient soup */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full opacity-40 blur-3xl" style={{ background: "hsl(var(--tone-amber) / 0.35)" }} />
         <div className="absolute top-1/3 -right-20 h-80 w-80 rounded-full opacity-30 blur-3xl" style={{ background: "hsl(var(--tone-sage) / 0.30)" }} />
@@ -41,7 +41,7 @@ const HeroSection = () => {
                 className="text-amber font-medium link-underline"
               >
                 TrackPay
-              </a> — pre-incubated at{" "}
+              </a> - pre-incubated at{" "}
               <span className="text-foreground">IIT Madras</span> with a{" "}
               <span className="text-clay font-medium">₹10.5L grant</span>.
               Previously Product Manager at{" "}
@@ -126,7 +126,7 @@ const HeroSection = () => {
 
         <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-10 md:mt-28 md:grid-cols-4">
           <MetaCell tone="amber" label="Currently" value="Founder, TrackPay" />
-          <MetaCell tone="blue" label="Studying" value="B.Tech CSE, IIIT Raichur" />
+          <MetaCell tone="blue" label="Education" value="B.Tech CSE, IIIT Raichur" />
           <MetaCell tone="sage" label="Last role" value="PM Intern, Darwix AI" />
           <MetaCell tone="plum" label="Writing" value="@ashwhotosh on Medium" />
         </div>

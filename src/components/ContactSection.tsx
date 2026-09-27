@@ -8,7 +8,7 @@ const ContactSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-clay" />
-              <p className="eyebrow-clay">06 — Contact</p>
+              <p className="eyebrow-clay">06 - Contact</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Get in touch.
@@ -32,7 +32,7 @@ const ContactSection = () => {
             </p>
 
             <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
-              Email or LinkedIn DM works best — I usually reply within a day.
+              Email or LinkedIn DM works best - I usually reply within a day.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-3">

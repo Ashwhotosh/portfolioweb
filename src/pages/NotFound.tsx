@@ -19,7 +19,7 @@ const NotFound = () => {
           Lost the trail.
         </h1>
         <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
-          The page you're looking for doesn't exist — at least not at <code>{location.pathname}</code>.
+          The page you're looking for doesn't exist - at least not at <code>{location.pathname}</code>.
         </p>
         <a
           href="/"

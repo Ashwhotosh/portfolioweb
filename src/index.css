@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Surface — warm off-white, near-black ink */
+    /* Surface - warm off-white, near-black ink */
     --background: 40 24% 97%;
     --foreground: 30 8% 12%;
 
@@ -37,7 +37,7 @@
 
     --radius: 0.375rem;
 
-    /* Tonal palette — semantic accents */
+    /* Tonal palette - semantic accents */
     --tone-amber: 22 78% 50%;     /* primary, in-progress, hero */
     --tone-sage:  140 28% 36%;    /* AI/ML, shipped */
     --tone-blue:  208 48% 40%;    /* Product/PM, live */
@@ -250,7 +250,7 @@
     background-color: hsl(var(--tone-sage));
   }
 
-  /* Sidebar color marker — used on section eyebrows / project indices */
+  /* Sidebar color marker - used on section eyebrows / project indices */
   .tone-bar {
     @apply inline-block h-3 w-[3px] align-middle rounded-full mr-2;
   }

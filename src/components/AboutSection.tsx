@@ -6,7 +6,7 @@ const AboutSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-amber" />
-              <p className="eyebrow-amber">01 — Now</p>
+              <p className="eyebrow-amber">01 - Now</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               What I'm doing now.
@@ -25,7 +25,7 @@ const AboutSection = () => {
                   className="text-amber font-medium link-underline"
                 >
                   TrackPay
-                </a>{" "}— an agentic AI
+                </a>{" "}- an agentic AI
                 personal finance platform pre-incubated at IIT Madras. My day-to-day is the
                 product-builder loop: user interviews, PRDs, MVP iteration, and shipping
                 LLM-powered features that actually work in front of users.
@@ -39,7 +39,7 @@ const AboutSection = () => {
                 through edge-case handling.
               </p>
               <p>
-                Before product, I lived inside the AI/ML stack — multi-agent systems with{" "}
+                Before product, I lived inside the AI/ML stack - multi-agent systems with{" "}
                 <span className="text-sage font-medium">LangChain</span> and{" "}
                 <span className="text-sage font-medium">LangGraph</span>, RAG pipelines on
                 financial documents, and a DistilBERT-based IPO sentiment model. That

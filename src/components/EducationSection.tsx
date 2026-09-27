@@ -2,14 +2,14 @@ type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
 const education: { period: string; degree: string; institution: string; detail: string; tone: Tone }[] = [
   {
-    period: "2022 — 2026",
+    period: "2022 - 2026",
     degree: "B.Tech, Computer Science Engineering",
     institution: "Indian Institute of Information Technology, Raichur",
     detail: "Roll: CS22B1013",
     tone: "amber",
   },
   {
-    period: "2019 — 2021",
+    period: "2019 - 2021",
     degree: "ISC (12th)",
     institution: "Ashoka Junior College, Nashik",
     detail: "85%",
@@ -28,8 +28,8 @@ const recognition: { label: string; tone: Tone }[] = [
   { label: "Top 5% of 1.2M students in JEE", tone: "amber" },
   { label: "MHT-CET 97.1 percentile (7L+ applicants)", tone: "blue" },
   { label: "Reliance Scholar", tone: "sage" },
-  { label: "Agile Foundations — IIBA", tone: "clay" },
-  { label: "Breaking into Product Management — GeeksforGeeks", tone: "plum" },
+  { label: "Agile Foundations - IIBA", tone: "clay" },
+  { label: "Breaking into Product Management - GeeksforGeeks", tone: "plum" },
 ];
 
 const EducationSection = () => {
@@ -40,7 +40,7 @@ const EducationSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-plum" />
-              <p className="eyebrow-plum">05 — Education</p>
+              <p className="eyebrow-plum">05 - Education</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Background.

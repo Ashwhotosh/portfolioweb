@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Multi-Agent IPO Due Diligence System",
     tagline: "Agentic GenAI framework that produces a full IPO analysis in ~80 seconds.",
     problem:
-      "RHP documents run 500+ pages. Manual due diligence — combining document understanding, sentiment, and peer-valuation benchmarks — takes analysts days.",
+      "RHP documents run 500+ pages. Manual due diligence - combining document understanding, sentiment, and peer-valuation benchmarks - takes analysts days.",
     approach:
       "Built a multi-agent pipeline: RAG over RHPs (LangChain + ChromaDB + sentence-transformer embeddings), autonomous agents for data scraping, sentiment scoring, and competitor ticker mapping, with Llama-3.3-70B orchestrated via Groq for fast generation.",
     outcomes: [
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "IPO Sentiment Analyzer",
     tagline: "DistilBERT + logistic regression beats a BiLSTM baseline by 21 points.",
     problem:
-      "Pre-IPO sentiment in news and filings is noisy, long-form, and badly labeled — generic sentiment models miss financial nuance.",
+      "Pre-IPO sentiment in news and filings is noisy, long-form, and badly labeled - generic sentiment models miss financial nuance.",
     approach:
       "Compared a BiLSTM deep learning model against a DistilBERT-embedding + logistic-regression pipeline. Built an end-to-end preprocessing and inference workflow on HuggingFace Transformers and Scikit-learn.",
     outcomes: [
@@ -79,7 +79,7 @@ const projects: Project[] = [
   },
   {
     index: "04",
-    title: "Automated Sales Hiring — Darwix AI",
+    title: "Automated Sales Hiring - Darwix AI",
     tagline: "Multi-channel hiring automation across email, WhatsApp, and AI voice.",
     problem:
       "Manual high-volume sales hiring was bottlenecked on recruiter throughput and inconsistent candidate scoring.",
@@ -102,7 +102,7 @@ const projects: Project[] = [
     title: "FinITR-AI v3: Agentic Multi-Document Reconciliation for Indian ITR Filing",
     tagline: "Locally-runnable ReAct multi-agent system resolving asymmetric IT information gaps.",
     problem:
-      "Indian salaried taxpayers with capital market exposure face an asymmetric information problem — the IT Department (via AIS) already knows their transactions, but existing tools only process self-reported data, causing 143(1) notices.",
+      "Indian salaried taxpayers with capital market exposure face an asymmetric information problem - the IT Department (via AIS) already knows their transactions, but existing tools only process self-reported data, causing 143(1) notices.",
     approach:
       "Built an orchestrator (ReAct Loop) with Auditor, Optimizer, Compliance, and Critic agents. Integrates Form 16, Bank CSVs, and AIS JSONs with Qwen2.5/Llama3.1 via Ollama. Built IndianTaxBench to evaluate 100+ adversarial cases.",
     outcomes: [
@@ -128,7 +128,7 @@ const ProjectsSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-clay" />
-              <p className="eyebrow-clay">03 — Projects</p>
+              <p className="eyebrow-clay">03 - Projects</p>
             </div>
           </div>
           <div className="md:col-span-9">
@@ -136,7 +136,7 @@ const ProjectsSection = () => {
               Selected work.
             </h2>
             <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
-              Four projects at the intersection of product and applied AI — each one shipped,
+              Four projects at the intersection of product and applied AI - each one shipped,
               measured, and tied to a real outcome.
             </p>
           </div>

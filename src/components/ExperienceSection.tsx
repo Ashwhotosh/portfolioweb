@@ -16,7 +16,7 @@ interface Role {
 
 const roles: Role[] = [
   {
-    period: "Apr 2025 — Present",
+    period: "Apr 2025 - Present",
     role: "Founder",
     org: "TrackPay",
     orgUrl: "https://thetrackpay.com/",
@@ -24,7 +24,7 @@ const roles: Role[] = [
       "AI-powered personal finance platform, pre-incubated at IIT Madras with a ₹10.5L grant.",
     bullets: [
       "Defined product vision and roadmap for an agentic AI financial assistant.",
-      "Led end-to-end product development — user research, problem validation, feature prioritization, iterative MVP builds.",
+      "Led end-to-end product development - user research, problem validation, feature prioritization, iterative MVP builds.",
       "Owned PRDs, success metrics, and engineering hand-off across the build.",
     ],
     tags: ["Product Strategy", "Agentic AI", "Fintech", "MVP"],
@@ -35,14 +35,14 @@ const roles: Role[] = [
     tone: "amber",
   },
   {
-    period: "Mar 2026 — May 2026",
+    period: "Mar 2026 - May 2026",
     role: "Product Manager Intern",
     org: "Darwix AI",
     summary:
       "Shipped two AI-first hiring products and produced fundraising-grade product collateral.",
     bullets: [
       "Scaled the Agentic AI Hiring Call product to 5,000+ automated calls and 300+ qualified leads.",
-      "Led end-to-end MVP of the Omnichannel Sales Hiring platform — product logic, workflow design, edge cases. 1,000+ calls, 100+ high-quality leads.",
+      "Led end-to-end MVP of the Omnichannel Sales Hiring platform - product logic, workflow design, edge cases. 1,000+ calls, 100+ high-quality leads.",
       "Built investor pitch decks, pipeline reports, and strategic documentation supporting fundraising and BD.",
     ],
     tags: ["Product Management", "Voice AI", "Workflow Design", "GTM"],
@@ -52,21 +52,21 @@ const roles: Role[] = [
     tone: "blue",
   },
   {
-    period: "Oct 2024 — Oct 2025",
+    period: "Oct 2024 - Oct 2025",
     role: "General Secretary, COSA",
     org: "IIIT Raichur",
     summary:
       "Operations and leadership across the institute's student affairs cabinet.",
     bullets: [
       "Spearheaded planning and execution of 20+ institute-level events (avg footfall 400+).",
-      "Oversaw a cumulative operational budget of ₹4M+ — allocation, vendor negotiation, financial accountability.",
+      "Oversaw a cumulative operational budget of ₹4M+ - allocation, vendor negotiation, financial accountability.",
       "Coordinated end-to-end logistics and cross-team execution across student bodies.",
     ],
     tags: ["Operations", "Stakeholder Mgmt", "Budgeting"],
     tone: "sage",
   },
   {
-    period: "Nov 2023 — Oct 2024",
+    period: "Nov 2023 - Oct 2024",
     role: "Public Relations Secretary",
     org: "IIIT Raichur",
     summary:
@@ -89,7 +89,7 @@ const ExperienceSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-blue" />
-              <p className="eyebrow-blue">02 — Work</p>
+              <p className="eyebrow-blue">02 - Work</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Where I've shipped.
