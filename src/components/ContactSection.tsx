@@ -8,7 +8,7 @@ const ContactSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-clay" />
-              <p className="eyebrow-clay">06 - Contact</p>
+              <p className="eyebrow-clay">07 - Contact</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Get in touch.

@@ -109,5 +109,12 @@ export default {
 			}
 		}
 	},
+	safelist: [
+		{ pattern: /chip-(amber|sage|blue|clay|plum)/ },
+		{ pattern: /tone-bar-(amber|sage|blue|clay|plum)/ },
+		{ pattern: /eyebrow-(amber|sage|blue|clay|plum)/ },
+		{ pattern: /text-(amber|sage|blue|clay|plum)/ },
+		{ pattern: /bg-wash-(cream|sand|sage|blue)/ }
+	],
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

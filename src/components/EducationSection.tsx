@@ -28,8 +28,6 @@ const recognition: { label: string; tone: Tone }[] = [
   { label: "Top 5% of 1.2M students in JEE", tone: "amber" },
   { label: "MHT-CET 97.1 percentile (7L+ applicants)", tone: "blue" },
   { label: "Reliance Scholar", tone: "sage" },
-  { label: "Agile Foundations - IIBA", tone: "clay" },
-  { label: "Breaking into Product Management - GeeksforGeeks", tone: "plum" },
 ];
 
 const EducationSection = () => {
@@ -40,7 +38,7 @@ const EducationSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-plum" />
-              <p className="eyebrow-plum">05 - Education</p>
+              <p className="eyebrow-plum">06 - Education</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Background.
@@ -71,7 +69,7 @@ const EducationSection = () => {
             <div className="mt-12 border-t border-border pt-8">
               <div className="flex items-center">
                 <span className="tone-bar tone-bar-plum" />
-                <p className="eyebrow-plum">Recognition & Certifications</p>
+                <p className="eyebrow-plum">Recognition & Awards</p>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {recognition.map((r, i) => (
