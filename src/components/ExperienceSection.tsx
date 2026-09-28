@@ -66,6 +66,23 @@ const roles: Role[] = [
     tone: "sage",
   },
   {
+    period: "Aug 2024 - Dec 2024",
+    role: "Teacher Assistant (Software Engineering)",
+    org: "IIIT Raichur",
+    summary:
+      "Mentored students and delivered lectures on real-world software development practices.",
+    bullets: [
+      "Took a lecture series covering real-world software engineering techniques, including Scrum, Agile, SWOT, and key product terms.",
+      "Conducted hands-on sessions with Notion and mentored a group of students in their projects.",
+      "Served on the judging panel for the final evaluation of student projects.",
+    ],
+    tags: ["Teaching", "Agile", "Mentorship", "Scrum"],
+    links: [
+      { label: "View Certificate", href: "/Certificate/Software Engineering.pdf" }
+    ],
+    tone: "plum",
+  },
+  {
     period: "Nov 2023 - Oct 2024",
     role: "Public Relations Secretary",
     org: "IIIT Raichur",
@@ -95,7 +112,7 @@ const ExperienceSection = () => {
               Where I've shipped.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Four roles across product, AI, and operations.
+              Five roles across product, AI, operations, and teaching.
             </p>
           </div>
 
