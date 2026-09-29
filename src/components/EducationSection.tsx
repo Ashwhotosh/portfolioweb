@@ -38,7 +38,7 @@ const EducationSection = () => {
           <div className="md:col-span-3">
             <div className="flex items-center">
               <span className="tone-bar tone-bar-plum" />
-              <p className="eyebrow-plum">06 - Education</p>
+              <p className="eyebrow-plum">07 - Education</p>
             </div>
             <h2 className="display mt-3 text-4xl text-foreground md:text-5xl">
               Background.
