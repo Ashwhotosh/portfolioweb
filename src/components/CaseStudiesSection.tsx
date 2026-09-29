@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
 
@@ -6,6 +6,7 @@ interface CaseStudy {
   title: string;
   description: string;
   file: string;
+  logoUrl: string;
   tone: Tone;
 }
 
@@ -14,13 +15,15 @@ const caseStudies: CaseStudy[] = [
     title: "Google Pay Teardown",
     description: "An in-depth analysis and teardown of Google Pay's user experience, product architecture, and payment workflows.",
     file: "/Case Studies/GooglePay_Teardown_Ashutosh_Singh.pdf",
+    logoUrl: "/Case Studies/gpay.svg",
     tone: "blue",
   },
   {
     title: "YouTube Music Teardown",
     description: "A comprehensive product teardown of YouTube Music, exploring user engagement, feature sets, and market positioning.",
     file: "/Case Studies/YouTubeMusic_Teardown_Ashutosh_Singh.pdf",
-    tone: "amber",
+    logoUrl: "/Case Studies/ytmusic.svg",
+    tone: "clay",
   }
 ];
 
@@ -46,8 +49,8 @@ const CaseStudiesSection = () => {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {caseStudies.map((cs, i) => (
                 <div key={i} className="group relative rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-sm">
-                  <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-${cs.tone}`}>
-                    <FileText className="h-5 w-5" />
+                  <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-${cs.tone}/10 p-2.5`}>
+                    <img src={cs.logoUrl} alt={`${cs.title} logo`} className="h-full w-full object-contain" />
                   </div>
                   <h3 className="text-xl font-medium text-foreground">{cs.title}</h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
