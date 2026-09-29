@@ -49,7 +49,7 @@ const CaseStudiesSection = () => {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {caseStudies.map((cs, i) => (
                 <div key={i} className="group relative rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-sm">
-                  <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-${cs.tone}/10 p-2.5`}>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-white p-2.5 shadow-sm border border-border">
                     <img src={cs.logoUrl} alt={`${cs.title} logo`} className="h-full w-full object-contain" />
                   </div>
                   <h3 className="text-xl font-medium text-foreground">{cs.title}</h3>
