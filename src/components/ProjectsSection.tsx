@@ -1,5 +1,4 @@
 import { ArrowUpRight, Github } from "lucide-react";
-import { Link } from "react-router-dom";
 import { projects } from "@/data/portfolio";
 
 
@@ -118,10 +117,6 @@ const ProjectsSection = () => {
             More experiments, case studies, and product decompositions live on GitHub and Medium.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/csp" className="btn-ghost">
-              <ArrowUpRight className="h-4 w-4" />
-              All Projects &amp; Case Studies
-            </Link>
             <a
               href="https://github.com/Ashwhotosh"
               target="_blank"
