@@ -1,31 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
+import { caseStudies } from "@/data/portfolio";
 
-type Tone = "amber" | "blue" | "sage" | "clay" | "plum";
-
-interface CaseStudy {
-  title: string;
-  description: string;
-  file: string;
-  logoUrl: string;
-  tone: Tone;
-}
-
-const caseStudies: CaseStudy[] = [
-  {
-    title: "Google Pay Teardown",
-    description: "An in-depth analysis and teardown of Google Pay's user experience, product architecture, and payment workflows.",
-    file: "/Case Studies/GooglePay_Teardown_Ashutosh_Singh.pdf",
-    logoUrl: "/Case Studies/gpay.svg",
-    tone: "blue",
-  },
-  {
-    title: "YouTube Music Teardown",
-    description: "A comprehensive product teardown of YouTube Music, exploring user engagement, feature sets, and market positioning.",
-    file: "/Case Studies/YouTubeMusic_Teardown_Ashutosh_Singh.pdf",
-    logoUrl: "/Case Studies/ytmusic.svg",
-    tone: "clay",
-  }
-];
 
 const CaseStudiesSection = () => {
   return (
@@ -50,7 +25,11 @@ const CaseStudiesSection = () => {
               {caseStudies.map((cs, i) => (
                 <div key={i} className="group relative rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-sm">
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-white p-2.5 shadow-sm border border-border">
-                    <img src={cs.logoUrl} alt={`${cs.title} logo`} className="h-full w-full object-contain" />
+                    {cs.logoUrl ? (
+                      <img src={cs.logoUrl} alt={`${cs.title} logo`} className="h-full w-full object-contain" />
+                    ) : (
+                      <FileText className={`h-full w-full text-${cs.tone}`} />
+                    )}
                   </div>
                   <h3 className="text-xl font-medium text-foreground">{cs.title}</h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">

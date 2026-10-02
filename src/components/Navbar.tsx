@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun, FileText } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@/components/ThemeProvider";
 
 const NAV = [
@@ -23,9 +24,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+    if (pathname !== "/") {
+      navigate(id === "hero" ? "/" : `/#${id}`);
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -60,6 +68,16 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
+            <li>
+              <Link
+                to="/csp"
+                className={`px-3 py-1.5 text-sm transition-colors hover:text-foreground ${
+                  pathname === "/csp" ? "text-foreground" : "text-muted-foreground"
+                }`}
+              >
+                CSP
+              </Link>
+            </li>
           </ul>
 
           <a
@@ -108,6 +126,15 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
+            <li>
+              <Link
+                to="/csp"
+                onClick={() => setIsOpen(false)}
+                className="font-serif text-3xl text-foreground hover:text-primary"
+              >
+                CSP
+              </Link>
+            </li>
           </ul>
 
           <div className="flex flex-col items-center gap-4">
