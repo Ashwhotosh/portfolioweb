@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen">
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10" aria-label="Ashutosh Singh Portfolio">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

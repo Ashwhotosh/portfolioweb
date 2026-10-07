@@ -112,7 +112,7 @@ const HeroSection = () => {
                 aria-hidden
               />
               <img
-                src="/lovable-uploads/ChatGPT Image Aug 13, 2026, 06_58_09 PM.png"
+                src="/lovable-uploads/ashutosh-singh-profile.png"
                 alt="Ashutosh Singh"
                 className="h-64 w-52 rounded-md object-cover object-center grayscale transition-all duration-500 hover:grayscale-0 md:h-72 md:w-60"
               />
